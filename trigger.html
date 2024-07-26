@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trigger Python Code</title>
+    <script>
+        function runCode() {
+            fetch('http://127.0.0.1:5000/run-code')
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.result); // Display result in an alert box
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</head>
+<body>
+    <button onclick="runCode()">Run Python Code</button>
+</body>
+</html>
