@@ -1,0 +1,13 @@
+from flask import Flask, request, jsonify
+import flappybirdclone  # Import the Python file where your code resides
+
+app = Flask(__name__)
+
+@app.route('/run-code', methods=['GET'])
+def run_code():
+    # Call a function from your_script.py that contains the code to run
+    result = flappybirdclone.main()
+    return jsonify({'result': result})
+
+if __name__ == '__main__':
+    app.run(debug=True)
